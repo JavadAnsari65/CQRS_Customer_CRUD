@@ -30,14 +30,13 @@ builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 builder.Services.AddEndpointsApiExplorer();
 
 //region_Swagger
-
 //builder.Services.AddSwaggerGen();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
     {
         Version = "v1",
-        Title = "Sample CQRS With MediatR.WebApi",
+        Title = "CRUD Operations For Customer With MediateR Pattern.WebApi",
     });
 });
 //endregion
@@ -49,12 +48,12 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
-    /*
+    
     app.UseSwaggerUI(c =>
     {
-        c.SwaggerEndpoint("/ swagger / v1 / swagger.json", "SampleCQRSwithMediatR.WebApi");
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "CRUD Operations For Customer With MediateR Pattern.WebApi");
     });
-    */
+    
 }
 
 app.UseAuthorization();

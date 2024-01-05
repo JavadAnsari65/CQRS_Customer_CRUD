@@ -6,7 +6,6 @@ namespace CQRS_Customer_CRUD.CustomerFeatures.Commands.UpdateCustomerCommand
 {
     public class UpdateCustomerCommandHandler : IRequestHandler<UpdateCustomerCommandModel, Guid>
     {
-        //private readonly ICustomerDbContext _context;
         private readonly ICustomerDbContext _context;
         public UpdateCustomerCommandHandler(ICustomerDbContext context)
         {

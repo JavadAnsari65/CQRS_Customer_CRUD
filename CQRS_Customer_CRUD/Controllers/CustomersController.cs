@@ -21,9 +21,9 @@ namespace CQRS_Customer_CRUD.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddCustomer(AddCustomerCommandModel command)
+        public async Task<IActionResult> AddCustomer(AddCustomerCommandModel customer)
         {
-            return Ok(await _mediator.Send(command));
+            return Ok(await _mediator.Send(customer));
         }
 
         [HttpGet]

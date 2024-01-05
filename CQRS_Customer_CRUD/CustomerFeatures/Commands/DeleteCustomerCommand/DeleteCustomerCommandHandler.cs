@@ -13,7 +13,7 @@ namespace CQRS_Customer_CRUD.CustomerFeatures.Commands.DeleteCustomerCommand
         }
         public async Task<Guid> Handle(DeleteCustomerCommandModel request, CancellationToken cancellationToken)
         {
-            var customer = await _context.Customers.Where(c => c.Id == request.Id).FirstOrDefaultAsync();
+            var customer = await _context.Customers.FirstOrDefaultAsync(c => c.Id == request.Id);
             if (customer == null) return default;
             _context.Customers.Remove(customer);
             await _context.SaveChangesAsync();
