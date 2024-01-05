@@ -23,7 +23,8 @@ builder.Services.AddDbContext<ICustomerDbContext, CustomerDbContext>(options =>
         b => b.MigrationsAssembly(typeof(ICustomerDbContext).Assembly.FullName))
 );
 
-builder.Services.AddMediatR(typeof(Program).Assembly);
+//builder.Services.AddMediatR(typeof(Program).Assembly);
+builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
